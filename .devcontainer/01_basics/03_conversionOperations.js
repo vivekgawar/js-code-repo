@@ -17,3 +17,8 @@ console.log(isLoggedInBoolean);
 
 //0 => false; 1 => true
 //""=> false; "non empty string"=> true
+
+//*********Operations*********
+//2%3 = remainder on division 
+// console.log("2" == 2) => true because of datatype conversions
+// console.log("2" === 2) => false because === checks value as well as datatype

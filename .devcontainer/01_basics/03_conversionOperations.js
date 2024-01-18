@@ -22,3 +22,9 @@ console.log(isLoggedInBoolean);
 //2%3 = remainder on division 
 // console.log("2" == 2) => true because of datatype conversions
 // console.log("2" === 2) => false because === checks value as well as datatype
+// to make a number bigInt add n in the end eg: 28091041210792n
+
+
+const Id = Symbol('123')
+const Id2 = Symbol('123')
+console.log(Id === Id2);

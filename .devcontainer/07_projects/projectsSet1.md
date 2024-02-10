@@ -52,8 +52,29 @@ form.addEventListener('submit', function (e) {
   } else {
     const bmi = (weight / ((height * height) / 10000)).toFixed(2);
     //show the result
-    results.innerHTML = `<span>${bmi}</span>`;
-  }
-});
 
+    results.innerHTML = `<span>${bmi}</span>`;
+    if (bmi < 18.6){
+      results.innerHTML = `Your BMI is ${bmi}, You are underweight`
+    }
+    else if (bmi >= 18.6 && bmi <= 24.6){
+      results.innerHTML = `Your BMI is ${bmi}, You are Normal weight`
+    }
+    else if (bmi > 24.6){
+      results.innerHTML = `Your BMI is ${bmi}, You are Overweight`
+  }
+}
+});
+```
+
+## Project - 3 (Digital Clock)
+```javascript
+const clock = document.getElementById('clock');
+// const clock = document.querySelector('#clock')
+
+setInterval(function () {
+  let date = new Date();
+  // console.log(date.toLocaleTimeString());
+  clock.innerHTML = date.toLocaleTimeString();
+}, 1000);
 ```

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vivek's SetInterval and ClearInterval Project</title>
+</head>
+<body>
+    <h1>Vivek's SetInterval and ClearInterval Project</h1>
+    <button id="start" class="buttons">Start</button>
+    <button id="stop" class="buttons">Stop</button>
+    <script>
+        let myInterval
+        const startFunction = function(){
+            myInterval = setInterval(writeVivek, 2000)
+            function writeVivek()
+            {console.log("Vivek", Date.now())};
+        }
+ 
+        const stopFunction = function(){
+            clearInterval(myInterval)
+            myInterval = null
+            console.log("STOPPED");}
+
+        const startRunning = document.querySelector('#start').
+        addEventListener('click', startFunction)
+
+        const stopRunning = document.querySelector('#stop').
+        addEventListener('click', stopFunction)
+    </script>
+</body>
+</html>

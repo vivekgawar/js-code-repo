@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #card {
+          height: 250px;
+          width: 450px;
+          background-color: #f0f0f0;
+          border: 10px solid #808080;
+          box-shadow: 0 0 10px rgba(0, 0, 10, 10);
+          margin: 20px;
+          padding: 20px;
+          border-radius: 25px;
+        }
+        #imageContainer img{
+            position: absolute;
+            max-width: 200px;
+            max-height: 200px;
+            left: 300px;
+            top: 80px;
+        }
+      </style>
+</head>
+<body style="background-color: #212121;">
+
+    <div id="card"></div>
+    <div id="imageContainer"></div>
+</style>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var card = document.getElementById('card');
+      
+    });
+    document.addEventListener('DOMContentLoaded', function() {
+      var imgElement = document.createElement('img');
+      imgElement.src = 'https://avatars.githubusercontent.com/u/11613311?v=4';
+      var imageContainer = document.getElementById('imageContainer');
+      imageContainer.appendChild(imgElement);
+    });
+    const requestUrl = "https://api.github.com/users/hiteshchoudhary"
+    const xhr = new XMLHttpRequest();    
+    xhr.open("GET", requestUrl)
+    xhr.onreadystatechange = function(){
+        console.log(xhr.readyState)
+        if(xhr.readyState==4){
+            const data = JSON.parse(this.responseText)
+            console.log(data);
+            card.innerHTML = `<h2>${data.name}</h2><p>Followers: ${data.followers}</p>`;
+            console.log(data.followers);
+        }
+    }
+    xhr.send()
+</script>
+</body>
+</html>
